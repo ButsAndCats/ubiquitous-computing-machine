@@ -1,9 +1,9 @@
 /**
- * A function that takes an array of strings and returns 
+ * Functions that takes an array of strings and returns 
  * an array only containing unique values in the array.
  */
 
-// This version removes any duplicates.
+// This version removes any duplicates but will keep one copy.
 const uniqueArrayItems = (arr: Array<string>): Array<string> => arr.filter((value, index, self) => self.indexOf(value) === index);
 
 // This version removes non unique items entirely.
