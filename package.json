@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "one": "node dist/one.js",
+    "two": "node dist/two.js",
+    "three": "node dist/three.js",
+    "four": "node dist/four.js"
+  }
+}

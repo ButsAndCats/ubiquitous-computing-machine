@@ -1,0 +1,39 @@
+type User {
+  id: ID!
+  fullName: String!
+  firstName: String!
+  lastName: String!
+  email: String
+}
+
+input UserInput {
+  fullName: String
+  firstName: String
+  lastName: String
+  email: String
+  role: UserRole
+  cohorts: [String!]
+}
+
+type Session {
+  user: User!
+  token: String!
+  expiresAt: DateTime!
+  createdAt: DateTime!
+}
+
+extend type Mutation {
+  register(
+    email: String!
+    userDetails: UserInput
+  ): Session!
+}
+
+mutation register($email: String!, $userDetails: UserInput) {
+  register(email: $email, userDetails: $userDetails) {
+    token
+    user {
+      id
+    }
+  }
+}
